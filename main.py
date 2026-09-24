@@ -15,7 +15,10 @@ def get_ip():
         
         for i in range(len(ip_add)):
             if not ip_add[i].isnumeric() or int(ip_add[i]) < 0 or int(ip_add[i]) > 255:
-                ip_add_mistakes += f", октет {i}"
+                if ip_add_mistakes != "Невірна ip-адреса. Зверніть увагу на":
+                    ip_add_mistakes += f", октет {i}"
+                else:
+                    ip_add_mistakes += f" октет {i}"
 
         if ip_add_mistakes != "Невірна ip-адреса. Зверніть увагу на":
             print(ip_add_mistakes + ".")
