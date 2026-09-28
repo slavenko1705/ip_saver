@@ -14,7 +14,8 @@ def get_ip():
         ip_add = ip_add.split(".")
         
         for i in range(len(ip_add)):
-            if not ip_add[i].isnumeric() or int(ip_add[i]) < 0 or int(ip_add[i]) > 255:
+            print(len(ip_add[i]))
+            if (len(ip_add[i]) < 1 or len(ip_add[i]) > 3) or not ip_add[i].isnumeric() or int(ip_add[i]) < 0 or int(ip_add[i]) > 255:
                 if ip_add_mistakes != "Невірна ip-адреса. Зверніть увагу на":
                     ip_add_mistakes += f", октет {i}"
                 else:
@@ -24,7 +25,9 @@ def get_ip():
             print(ip_add_mistakes + ".")
             continue
         break
-    return ".".join(ip_add)
+    return ip_add
+
+
 
 
 def write_to_file(data, file_name):
@@ -34,7 +37,7 @@ def write_to_file(data, file_name):
     
 network_data = {"ip_addresses": [
     {"name": input("Введіть ім'я мережі: "),
-    "ip_addr": get_ip(),
+    "ip_addr": ".".join(get_ip()),
     "description": input("Додайте опис мережі: "),
     "properties": {
                     "version": "IPv4",
