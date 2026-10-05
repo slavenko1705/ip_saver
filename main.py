@@ -1,6 +1,9 @@
 import json
 
 
+filename = "data.json"
+
+
 print(f"********** IP Saver Tool **********")
 
 
@@ -25,6 +28,7 @@ def get_ip():
             print(ip_add_mistakes + ".")
             continue
         break
+    print(ip_add)
     return ip_add
 
 
@@ -34,17 +38,26 @@ def write_to_file(data, file_name):
     with open(file_name, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
         
-    
-network_data = {"ip_addresses": [
-    {"name": input("Введіть ім'я мережі: "),
-    "ip_addr": ".".join(get_ip()),
-    "description": input("Додайте опис мережі: "),
-    "properties": {
-                    "version": "IPv4",
-                    "type": "static",
-                    "device": "PC-User",
-                    "service": "internet"
-                }}
-    ]}
+        
+def read_json(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        return file.read()
+        
+        
+json_data = read_json(filename)
+new_user_data = [
+                    {
+                    ".".join(get_ip()): {
+                                    "name": input("Введіть ім'я мережі: "),
+                                    "cabinet": input("Додайте опис мережі: "),
+                                    "version": "IPv4",
+                                    "type": "static",
+                                    "device": "PC-User",
+                                    "service": "internet",
+                                    "status": "on"
+                                    },
+                    }
+                ]
+network_data = {"ip_addresses": new_user_data}
 
-write_to_file(network_data, "data.json")
+write_to_file(network_data, filename)
