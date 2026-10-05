@@ -1,7 +1,27 @@
 {
     "ip_addresses": [
-        {
-            "192.168.1.1": {
+        {"192.168.1.0": [{
+                "ip_address": "192.168.1.100",
+                "name": "dgf",
+                "cabinet": "205",
+                "version": "IPv4",
+                "type": "static",
+                "device": "PC-User",
+                "service": "internet",
+                "status": "on"
+            },
+            {
+                "ip_address": "192.168.1.101",
+                "name": "dgf",
+                "cabinet": "205",
+                "version": "IPv4",
+                "type": "static",
+                "device": "PC-User",
+                "service": "internet",
+                "status": "on"
+            },
+            {
+                "ip_address": "192.168.1.102",
                 "name": "dgf",
                 "cabinet": "205",
                 "version": "IPv4",
@@ -10,6 +30,7 @@
                 "service": "internet",
                 "status": "on"
             }
+        ]
         }
     ]
 }
