@@ -28,12 +28,13 @@ def get_ip():
             print(ip_add_mistakes + ".")
             continue
         break
-    print(ip_add)
     return ip_add
 
 
-
-
+# def is_subnetwork(ip_address: list):
+#     if ".".join(ip_address[:3] + ["0"]) in 
+    
+    
 def write_to_file(data, file_name):
     with open(file_name, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
@@ -41,23 +42,52 @@ def write_to_file(data, file_name):
         
 def read_json(filename):
     with open(filename, "r", encoding="utf-8") as file:
-        return file.read()
+        return json.load(file)
         
-        
-json_data = read_json(filename)
-new_user_data = [
-                    {
-                    ".".join(get_ip()): {
+# take new data from user/admin
+ip_address = get_ip()
+new_user_data = {
+                    ".".join(ip_address): {
                                     "name": input("Введіть ім'я мережі: "),
-                                    "cabinet": input("Додайте опис мережі: "),
+                                    "cabinet": input("Номер кабінету: "),
                                     "version": "IPv4",
                                     "type": "static",
                                     "device": "PC-User",
                                     "service": "internet",
                                     "status": "on"
                                     },
-                    }
-                ]
+                }
+
+# read our json file
+json_data = read_json(filename)
+
+
+# check for subnetworks
+for subnetwork in json_data["ip_addresses"]:
+    if not ".".join(ip_address[:3] + ["0"]) in subnetwork.keys():
+        json_data["ip_addresses"] += [{f"підмережа_{".".join(ip_address[:3] + ["0"])}": [new_user_data]}]
+    else:
+        # a = ["1", "2", "9", "10"]
+        # b = "0"
+
+        for index, ip_adr in enumerate(json_data["ip_addresses"]):
+            print(f"el: {el}, index: {i}")
+            
+            if int(b) > int(el) and i == (len(a) - 1):
+                a.append(b)
+                # c = a
+                print("1")
+                break
+            elif int(b) > int(el):
+                print("2")
+                continue
+            else:
+                a = a[:i] + list(b) + a[i:]
+                print("3")
+                break
+        
+
+                
 network_data = {"ip_addresses": new_user_data}
 
 write_to_file(network_data, filename)
