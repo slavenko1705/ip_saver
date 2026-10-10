@@ -74,21 +74,29 @@ is_done = False
 while is_done == False:
     # take new data from user/admin 
     ip_address = get_ip()
+    ip_address_str = ".".join(ip_address)
 
     # check for subnetworks and ip dublicates
-    for subnetwork in json_data["ip_addresses"]:
-        if not ".".join(ip_address[:3] + ["0"]) in subnetwork.keys():
-            json_data["ip_addresses"] += [{f"{".".join(ip_address[:3] + ["0"])}": [ip_data(ip_address)]}]
-            print("1")
+    for i,subnetwork in enumerate(json_data["ip_addresses"]):
+        subnetwork_str = ".".join(ip_address[:3] + ["0"])
+        if not subnetwork_str in subnetwork.keys() and i == len(json_data["ip_addresses"]) - 1:
+            json_data["ip_addresses"] += [{subnetwork_str: [ip_data(ip_address)]}]
+            print("Додано нову підмережу та нову ip адресу")
+            is_done = True
             break
-        elif ".".join(ip_address[:3] + ["0"]) in subnetwork.keys() and ip_dublicate_check(ip_address, json_data):
+        elif subnetwork_str in subnetwork.keys() and ip_dublicate_check(ip_address, json_data):
             rewrite = input("Така адреса вже існує. Перезаписати дані? (y/n): ")
             while True:
                 
                 if rewrite == "y":
                     new_ip_data = ip_data(ip_address)
                     print(new_ip_data)
-                    is_done = True
+                    # Перезаписуємо дані
+                    ip_box_index = next((i for i,el in enumerate(subnetwork[subnetwork_str]) if el["ip_address"] == ip_address_str), -1)
+                    
+                    print(ip_box_index)
+                    print(f"subnetwork = {subnetwork}")
+                    # is_done = True
                     print("Дані перезаписано")
                     break
                 elif rewrite == "n":
@@ -106,7 +114,7 @@ while is_done == False:
             # else: 
                     # додати включення блоку з ір адресою в потрібне місце
            
-
+# print(json_data)
 
 
 
