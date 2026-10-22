@@ -3,9 +3,9 @@
         {
             "192.168.1.0": [
                 {
-                    "ip_address": "192.168.1.100",
-                    "name": "dgf",
-                    "cabinet": "205",
+                    "ip_address": "192.168.1.98",
+                    "name": "ghjk",
+                    "cabinet": "203",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -13,9 +13,9 @@
                     "status": "on"
                 },
                 {
-                    "ip_address": "192.168.1.101",
-                    "name": "Borisovych",
-                    "cabinet": "206",
+                    "ip_address": "192.168.1.99",
+                    "name": "ghj",
+                    "cabinet": "204",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -26,6 +26,16 @@
                     "ip_address": "192.168.1.103",
                     "name": "dgf",
                     "cabinet": "205",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.104",
+                    "name": "ssd",
+                    "cabinet": "211",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",

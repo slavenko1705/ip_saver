@@ -1,5 +1,5 @@
 a = ["1", "2", "9", "10"]
-b = "9"
+b = "0"
 
 for i, el in enumerate(a):
     print(f"el: {el}, index: {i}")
@@ -15,3 +15,5 @@ for i, el in enumerate(a):
     else:
         a = a[:i] + list(b) + a[i:]
         break
+
+print(a)
