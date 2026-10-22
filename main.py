@@ -31,7 +31,7 @@ def get_ip():
     return ip_add
 
 
-def ip_data(ip_address) -> dict:
+def ip_data(ip_address: list) -> dict:
     new_user_data = {
                         "ip_address" : ".".join(ip_address),
                         "name": input("Введіть ім'я мережі: "),
@@ -136,10 +136,17 @@ while is_done == False:
                 
                 # Перевірка індексу в списку адрес підмережі, якщо немає, то додаємо в кінці
                 if fourth_ip_octets.index(fourth_new_ip_octet) > len(subnetwork[subnetwork_str]) - 1: 
+                    print("1")
                     subnetwork[subnetwork_str].append(ip_data(ip_address))
+                elif fourth_ip_octets.index(fourth_new_ip_octet) < 1:
+                    print("2")
+                    subnetwork[subnetwork_str].insert(0, ip_data(ip_address))
                 else:
-                    subnetwork[subnetwork_str][fourth_ip_octets.index(fourth_new_ip_octet)] = ip_data(ip_address)
-                
+                    print("3")
+                    subnetwork[subnetwork_str] = (subnetwork[subnetwork_str][:fourth_ip_octets.index(fourth_new_ip_octet)] 
+                    + [ip_data(ip_address)]
+                    + subnetwork[subnetwork_str][fourth_ip_octets.index(fourth_new_ip_octet):])
+
                 is_done = True
                 break
             

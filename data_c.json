@@ -4,8 +4,28 @@
             "192.168.1.0": [
                 {
                     "ip_address": "192.168.1.98",
-                    "name": "ghjk",
-                    "cabinet": "203",
+                    "name": "ofdkpdsfdf",
+                    "cabinet": "199",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.99",
+                    "name": "sdfdsf",
+                    "cabinet": "201",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.100",
+                    "name": "dgf",
+                    "cabinet": "205",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -23,9 +43,9 @@
                     "status": "on"
                 },
                 {
-                    "ip_address": "192.168.1.103",
-                    "name": "dgf",
-                    "cabinet": "205",
+                    "ip_address": "192.168.1.102",
+                    "name": "sdfsafsdfa",
+                    "cabinet": "207",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -33,9 +53,9 @@
                     "status": "on"
                 },
                 {
-                    "ip_address": "192.168.1.104",
-                    "name": "ssd",
-                    "cabinet": "211",
+                    "ip_address": "192.168.1.103",
+                    "name": "dgf",
+                    "cabinet": "205",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -85,6 +105,16 @@
                     "device": "PC-User",
                     "service": "internet",
                     "status": "on"
+                },
+                {
+                    "ip_address": "192.168.2.110",
+                    "name": "afsfgdfgdfgdfg",
+                    "cabinet": "310",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
                 }
             ]
         },
@@ -94,6 +124,20 @@
                     "ip_address": "192.168.3.100",
                     "name": "fghd",
                     "cabinet": "server",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                }
+            ]
+        },
+        {
+            "192.168.4.0": [
+                {
+                    "ip_address": "192.168.4.110",
+                    "name": "afdasdfasfas",
+                    "cabinet": "410",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
