@@ -33,16 +33,6 @@
                     "status": "on"
                 },
                 {
-                    "ip_address": "192.168.1.99",
-                    "name": "ghj",
-                    "cabinet": "204",
-                    "version": "IPv4",
-                    "type": "static",
-                    "device": "PC-User",
-                    "service": "internet",
-                    "status": "on"
-                },
-                {
                     "ip_address": "192.168.1.102",
                     "name": "sdfsafsdfa",
                     "cabinet": "207",
