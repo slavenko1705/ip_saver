@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 filename = "data_c.json"
@@ -7,9 +8,16 @@ filename = "data_c.json"
 print(f"********** IP Saver Tool **********\n\nНатисність 'q' або 'quit' якщо бажаєте вийти\n")
 
 
+def if_quit(user_info):
+    if user_info in ["q", "quit"]:
+        sys.exit()
+
+
 def get_ip():
     while True:
         ip_add = input("Введіть ip-адресу: ")
+        if_quit(ip_add)
+            
         if "." not in ip_add or ip_add.count(".") != 3:
             print("Невірна ір-адреса. Перегляньте розділові знаки між октетами.")
             continue
@@ -42,6 +50,10 @@ def ip_data(ip_address: list) -> dict:
                         "service": "internet",
                         "status": "on"
                     }
+    
+    if new_user_data["name"] in ["q", "quit"]:
+        sys.exit()
+        
     return new_user_data
     
     
@@ -90,7 +102,7 @@ while is_done == False:
         if subnetwork_str in subnetwork.keys():
             if subnetwork_str in subnetwork.keys() and ip_dublicate_check(ip_address, json_data):
                 # якщо є така підмережа та є ір-адреса:
-                rewrite = input("Така адреса вже існує. Перезаписати дані? (y/n): ")
+                rewrite = input("Така адреса вже існує. Перезаписати дані? (y/n або q): ")
                 while True:
                     
                     if rewrite == "y":

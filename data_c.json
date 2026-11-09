@@ -3,9 +3,49 @@
         {
             "192.168.1.0": [
                 {
+                    "ip_address": "192.168.1.94",
+                    "name": "94",
+                    "cabinet": "194",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.95",
+                    "name": "95",
+                    "cabinet": "195",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.96",
+                    "name": "96",
+                    "cabinet": "196",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.97",
+                    "name": "97",
+                    "cabinet": "197",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
                     "ip_address": "192.168.1.98",
-                    "name": "ofdkpdsfdf",
-                    "cabinet": "199",
+                    "name": "98",
+                    "cabinet": "198",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
@@ -26,6 +66,16 @@
                     "ip_address": "192.168.1.100",
                     "name": "dgf",
                     "cabinet": "205",
+                    "version": "IPv4",
+                    "type": "static",
+                    "device": "PC-User",
+                    "service": "internet",
+                    "status": "on"
+                },
+                {
+                    "ip_address": "192.168.1.101",
+                    "name": "zfzxfz",
+                    "cabinet": "206",
                     "version": "IPv4",
                     "type": "static",
                     "device": "PC-User",
